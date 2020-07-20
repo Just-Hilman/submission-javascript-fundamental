@@ -1,4 +1,4 @@
-//menampilkan daftar awal
+//menampilkan daftar minuman di awal
 $('#drink-list').html('');
 
 $.ajax({
@@ -10,17 +10,17 @@ $.ajax({
     },
     success: function (tampil) {
         if (tampil.drinks != null) {
-            let naon = tampil.drinks;
-            $.each(naon, function (i, apa) {
-                // console.log(apa.idDrink);
+            const awal = tampil.drinks;
+            $.each(awal, function (i, data) {
+                // console.log(data.idDrink);
                 $('#drink-list').append(`
                     <div class="col-md-3">
                         <div class="card mb-4">
-                            <img src="` + apa.strDrinkThumb + `" class="card-img-top" alt="...">
+                            <img src="${data.strDrinkThumb}" class="card-img-top" alt="...">
                             <div class="card-body">
-                            <h5 class="card-title">` + apa.strDrink + `</h5>
-                            <p class="card-text">` + apa.strCategory + `</p>
-                            <a href="#" class="btn btn-primary see-detail" data-toggle="modal" data-target="#exampleModal" data-id="` + apa.idDrink + `">Detail</a>
+                            <h5 class="card-title">${data.strDrink}</h5>
+                            <p class="card-text">${data.strCategory}</p>
+                            <a href="#" class="btn btn-primary see-detail" data-toggle="modal" data-target="#exampleModal" data-id="${data.idDrink}">Detail</a>
                             </div>
                         </div>
                     </div>
@@ -43,17 +43,17 @@ $.ajax({
     },
     success: function (tampil) {
         if (tampil.drinks != null) {
-            let naon = tampil.drinks;
-            $.each(naon, function (i, apa) {
-                // console.log(apa.idDrink);
+            const awal = tampil.drinks;
+            $.each(awal, function (i, data) {
+                // console.log(data.idDrink);
                 $('#drink-list').append(`
                     <div class="col-md-3">
                         <div class="card mb-4">
-                            <img src="` + apa.strDrinkThumb + `" class="card-img-top" alt="...">
+                            <img src="${data.strDrinkThumb}" class="card-img-top" alt="...">
                             <div class="card-body">
-                            <h5 class="card-title">` + apa.strDrink + `</h5>
-                            <p class="card-text">` + apa.strCategory + `</p>
-                            <a href="#" class="btn btn-primary see-detail" data-toggle="modal" data-target="#exampleModal" data-id="` + apa.idDrink + `">Detail</a>
+                            <h5 class="card-title">${data.strDrink}</h5>
+                            <p class="card-text">${data.strCategory}</p>
+                            <a href="#" class="btn btn-primary see-detail" data-toggle="modal" data-target="#exampleModal" data-id="${data.idDrink}">Detail</a>
                             </div>
                         </div>
                     </div>
@@ -76,17 +76,17 @@ $.ajax({
     },
     success: function (tampil) {
         if (tampil.drinks != null) {
-            let naon = tampil.drinks;
-            $.each(naon, function (i, apa) {
-                // console.log(apa.idDrink);
+            const awal = tampil.drinks;
+            $.each(awal, function (i, data) {
+                // console.log(data.idDrink);
                 $('#drink-list').append(`
                     <div class="col-md-3">
                         <div class="card mb-4">
-                            <img src="` + apa.strDrinkThumb + `" class="card-img-top" alt="...">
+                            <img src="${data.strDrinkThumb}" class="card-img-top" alt="...">
                             <div class="card-body">
-                            <h5 class="card-title">` + apa.strDrink + `</h5>
-                            <p class="card-text">` + apa.strCategory + `</p>
-                            <a href="#" class="btn btn-primary see-detail" data-toggle="modal" data-target="#exampleModal" data-id="` + apa.idDrink + `">Detail</a>
+                            <h5 class="card-title">${data.strDrink}</h5>
+                            <p class="card-text">${data.strCategory}</p>
+                            <a href="#" class="btn btn-primary see-detail" data-toggle="modal" data-target="#exampleModal" data-id="${data.idDrink}">Detail</a>
                             </div>
                         </div>
                     </div>
@@ -109,17 +109,17 @@ $.ajax({
     },
     success: function (tampil) {
         if (tampil.drinks != null) {
-            let naon = tampil.drinks;
-            $.each(naon, function (i, apa) {
-                // console.log(apa.idDrink);
+            const awal = tampil.drinks;
+            $.each(awal, function (i, data) {
+                // console.log(data.idDrink);
                 $('#drink-list').append(`
                     <div class="col-md-3">
                         <div class="card mb-4">
-                            <img src="` + apa.strDrinkThumb + `" class="card-img-top" alt="...">
+                            <img src="${data.strDrinkThumb}" class="card-img-top" alt="...">
                             <div class="card-body">
-                            <h5 class="card-title">` + apa.strDrink + `</h5>
-                            <p class="card-text">` + apa.strCategory + `</p>
-                            <a href="#" class="btn btn-primary see-detail" data-toggle="modal" data-target="#exampleModal" data-id="` + apa.idDrink + `">Detail</a>
+                            <h5 class="card-title">${data.strDrink}</h5>
+                            <p class="card-text">${data.strCategory}</p>
+                            <a href="#" class="btn btn-primary see-detail" data-toggle="modal" data-target="#exampleModal" data-id="${data.idDrink}">Detail</a>
                             </div>
                         </div>
                     </div>
@@ -155,10 +155,10 @@ function searchDrink() {
                     $('#drink-list').append(`
                     <div class="col-md-3">
                         <div class="card mb-4">
-                            <img src="` + data.strDrinkThumb + `" class="card-img-top" alt="...">
+                            <img src="${data.strDrinkThumb}" class="card-img-top" alt="...">
                             <div class="card-body">
-                            <h5 class="card-title">` + data.strDrink + `</h5>
-                            <p class="card-text">` + data.strCategory + `</p>
+                            <h5 class="card-title">${data.strDrink}</h5>
+                            <p class="card-text">${data.strCategory}</p>
                             <a href="#" class="btn btn-primary see-detail" data-toggle="modal" data-target="#exampleModal" data-id="` + data.idDrink + `">Detail</a>
                             </div>
                         </div>
@@ -210,24 +210,24 @@ $('#drink-list').on('click', '.see-detail', function () {
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col-md-4">
-                                    <img src="` + data.strDrinkThumb + `" class="img-fluid">
+                                    <img src="${data.strDrinkThumb}" class="img-fluid">
                                 </div>
 
                                 <div class="col-md-8">
                                     <ul class="list-group">
-                                        <li class="list-group-item">Name : ` + data.strDrink + `</li>
+                                        <li class="list-group-item">Name : ${data.strDrink}</li>
                                     </ul>
 
                                     <ul class="list-group">
-                                        <li class="list-group-item">Category : ` + data.strCategory + `</li>
+                                        <li class="list-group-item">Category : ${data.strCategory}</li>
                                     </ul>
 
                                     <ul class="list-group">
-                                        <li class="list-group-item">Glass : ` + data.strGlass + `</li>
+                                        <li class="list-group-item">Glass : ${data.strGlass}</li>
                                     </ul>
 
                                     <ul class="list-group">
-                                        <li class="list-group-item">Instructions : ` + data.strInstructions + `</li>
+                                        <li class="list-group-item">Instructions : ${data.strInstructions}</li>
                                     </ul>
                                 </div>
                             </div>
@@ -244,7 +244,7 @@ $('#drink-list').on('click', '.see-detail', function () {
 for (i = 0; i < 26; i++) {
     const abjad = (i + 10).toString(36);
     $('#search-first').append(`
-        <li class="list"><button type="button" class="btn first-letter btn-outline-light text-dark">` + abjad + `</button></li>
+        <li class="list"><button type="button" class="btn first-letter btn-outline-light text-dark">${abjad}</button></li>
     `);
 };
 
