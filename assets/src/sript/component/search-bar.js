@@ -1,7 +1,6 @@
-function searchLetter() {
-    //menampilkan berdasarkan huruf pertama
-    $('.first-letter').on('click', function () {
-        // console.log($(this).text());
+//menampilkan search
+class DataSource {
+    static searchDrink() {
         $('#drink-list').html('');
         $('#result-length').html('');
 
@@ -10,15 +9,13 @@ function searchLetter() {
             type: 'get',
             dataType: 'json',
             data: {
-                'f': $(this).text()
+                's': $('#search-input').val()
             },
             success: function (result) {
                 if (result.drinks != null) {
-                    const minuman = result.drinks;
-                    // menampilkan jumlah result
-                    // console.log(minuman.length);
+                    let minuman = result.drinks;
                     $('#result-length').append(`
-                        <h6>Found ${minuman.length} Drinks</h6>
+                        <h6>Found ` + minuman.length + ` Drinks</h6>
                     `);
 
                     $.each(minuman, function (i, data) {
@@ -35,13 +32,16 @@ function searchLetter() {
                         </div>
                         `);
                     });
+                    $('#search-input').val('');
+
                 } else {
-                    $('#result-length').html('<h6>No Drinks Found!</h6>');
+                    // alert("Drinks You Search Not Found!")
+                    $('#drink-list').html('<h3>Drinks You Search Not Found!</h3>');
+                    $('#search-input').val('');
                 }
             }
         });
-    });
+    };
 };
 
-
-export default searchLetter;
+export default DataSource;
