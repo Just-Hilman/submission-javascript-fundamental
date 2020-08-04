@@ -1,6 +1,8 @@
 import DataSource from '../component/search-bar.js';
 import searchLetter from '../data/search-data.js';
 import '../component/letter-search.js';
+import showDrink from '../component/drink-list.js';
+import seeDetail from '../component/detail.js';
 
 const main = () => {
     //ketika menekan tombol search
@@ -17,6 +19,12 @@ const main = () => {
 
     //menjalankan fungsi searchLetter untuk mencari data berdasarkan huruf pertama
     searchLetter();
+
+    //menjalankan fungsi showDrink untuk menampilkan sample minuman di awal halaman
+    showDrink();
+
+    //menjalankan fungsi seeDetail ketika menekan tombol detail
+    seeDetail();
 };
 
 
