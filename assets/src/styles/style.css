@@ -4,13 +4,8 @@
 
 /* navbar */
 .navbar {
-    box-shadow: 1px 1px 5px rgba(161, 161, 161, 0.7);
+    background-color: #212A40;
 }
-
-/* nav .scrolled {
-    background-image: url(../../img/banner-nav.jpg);
-    background-size: cover;
-} */
 
 .navbar-brand {
     font-family: 'Pacifico', cursive;
@@ -28,23 +23,35 @@
 }
 
 .tombol-login {
-    border: 1px solid #FFB13A;
-    border-radius: 15px;
     opacity: 50%;
     color: gold !important;
 
 }
 
 .tombol-login:hover {
-    /* background-color: #1ABC9C; */
     opacity: 100%;
 }
 
+
 .jumbotron {
-    background-image: url(../../img/banner-web.jpg);
+    background-image: url(../../img/jumbotron.jpg);
     background-size: cover;
     height: 520px;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+    position: relative;
+    background-attachment: fixed;
+
+}
+
+
+.jumbotron::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    position: absolute;
+    bottom: 0;
 }
 
 .jumbotron .display-4 {
@@ -112,6 +119,31 @@
     margin-top: 50px;
 }
 
+footer {
+    box-sizing: border-box;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 3% 0px;
+    margin: 5px;
+    width: 80%;
+    flex-wrap: wrap;
+}
+
+footer-section ul {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0px;
+    padding: 0px 20px;
+
+}
+
+
 @media (min-width: 992px) {
     .nav-link {
         position: relative;
@@ -149,9 +181,9 @@
     }
 
     .jumbotron {
-        margin-top: -70px;
+        margin-top: 69px;
         background-size: cover;
-        height: 720px;
+        height: 940px;
     }
 
     .jumbotron .display-4 {
@@ -182,4 +214,13 @@ footer {
     background-color: #212A40;
     text-align: center;
     font-weight: bold;
+}
+
+@media (max-width: 720px) {
+
+    footer-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 }
